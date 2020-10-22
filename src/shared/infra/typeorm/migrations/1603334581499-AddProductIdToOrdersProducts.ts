@@ -30,7 +30,10 @@ export default class AddProductIdToOrdersProducts1603334581499
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('orders_products', 'OrdersProductsOrder');
+    await queryRunner.dropForeignKey(
+      'orders_products',
+      'OrdersProductsProducts',
+    );
 
     await queryRunner.dropColumn('orders_products', 'product_id');
   }
